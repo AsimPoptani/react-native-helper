@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Welcome to the react native creator</title>
+		<link rel="stylesheet" href="./index.css" />
+		<link rel="stylesheet" href="./node_modules/aos/dist/aos.css" />
+	</head>
+	<body>
+		<section class="page" data-aos="zoom-in">
+			<h1>Welcome</h1>
+			<button>Get started</button>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+            <div >
+			<h1>Some quick details</h1>
+			App name <input /> Directory<input type="file" webkitdirectory /></div>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+            <h1>Pick some Theme Colors</h1>
+            <input type="color" name="favcolor" value="#ff0000">
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+            <!-- Fonts currently available https://github.com/react-native-training/react-native-fonts -->
+            <h1>Drag and drop fonts you want!</h1>
+            <p>Please make sure the fonts you have selected have the same posix name as the file name (for ios)!</p>
+            <p>This can be done with fontForge which has been attached to this application!</p>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Specify font sizes and colours!</h1>
+			<p>Below are some presets which I find work out well!</p>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Specify font sizes and colours!</h1>
+			<p>Below are some presets which I find work out well!</p>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Pick some images</h1>
+			<p>Pick some images</p>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Pick some Common Lib</h1>
+			<p>Below are some presets which I find work out well!</p>
+		</section>
+		<!-- <section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Choose an app icon</h1>
+		</section> -->
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Yarn or Node</h1>
+		</section>
+		<section class="page" data-aos="zoom-in"  data-aos-duration="1000">
+			<h1>Your all set</h1>
+			<button>Build</button>
+		</section>
+	</body>
+	<script>
+		const AOS = require("aos");
+		const { dialog } = require("electron").remote;
+        let themeColors,directory,fonts,fontSizesAndColors,images,libSelection,yarn
+        themeColors=[];
+        directory='';
+        fonts=[];
+        fontSizesAndColors=[];
+        images=[];
+        libSelection=[];
+        yarn=true;
+        const getImages =() =>{
+			dialog.showOpenDialog({
+				properties: ["multiSelections"],
+				filters: [{ name: "Images", extensions: ["jpg", "png", "gif"] }]
+            })
+        };
+        const getFonts =() =>{
+            dialog.showOpenDialog({
+				properties: ["multiSelections"],
+				filters: [{ name: "Fonts", extensions: ["ttf"] }]
+            })
+        }
+
+		// import 'aos/dist/aos.css';
+		AOS.init();
+	</script>
+</html>
